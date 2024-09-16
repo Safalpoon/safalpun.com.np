@@ -15,7 +15,7 @@ body {
 }
 .stickey{
     position: sticky;
-    top: 10px;
+    top: 0px;
     z-index: 1000;
 }
 nav {
