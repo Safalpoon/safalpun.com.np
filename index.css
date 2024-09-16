@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #ffff;
+}
+.stickey{
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+}
+nav {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    height: 70px;
+ 
+}
+
+.logo {
+    color: #3a395e;
+    font-size: 25px;
+}
+
+nav ul {
+    display: flex;
+    gap: 35px;
+    margin: auto;
+    padding-bottom: 22px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #6c51e7;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #153558;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-icon i {
+    color: #153558;
+    font-size: 30px;
+}
+
+/*hEADER END*/
+.home {
+    display: flex;
+    margin: 3rem 0 auto auto;
+    justify-content: space-evenly;
+}
+
+.safal {
+    width: 55%;
+}
+
+.image {
+    width: 40%;
+}
+
+.name {
+    color: #3a395e;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 750;
+    font-size: 4rem;
+    line-height: 1.25;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.frontend {
+    color: #6c51e7;
+}
+
+.p-1 {
+    color: #9c9bb2;
+    font-size: 25px;
+}
+
+.btn {
+    color: aliceblue;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.talk-button {
+    font-size: 15px;
+    background-color: #6c51e7;
+    height: 40px;
+    border-width: 0px;
+    color: white;
+    cursor: pointer;
+    width: 130px;
+    height: 50px;
+    border-radius: 15px;
+    transition-duration: 2s;
+    font-weight: bold;
+}
+
+.talk-button:hover {
+    background-color: rgb(153, 55, 245);
+    opacity: 0.5;
+    color: #fff;
+    font-weight: bold;
+}
+
+.talk-button:active {
+    background-color: #00e2ff;
+    opacity: 0.6;
+    text-align: center;
+    font-weight: bold;
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-2 {
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    width: 450px;
+    height: 500px;
+}
+
+/*about section*/
+.experience {
+    padding: 20px;
+    padding-bottom: 9px;
+}
+.exp {
+    display: flex;
+}
+.ml {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-self: unset;
+    flex-direction: column;
+    margin-left: 3rem;
+    justify-content: space-between;
+}
+.text-1 {
+    color: #3a395e;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 750;
+    font-size: 4rem;
+    line-height: 1.25;
+    margin-top: 2px;
+    margin-bottom: 1rem;
+}
+.text-2 {
+    color: #424144;
+    font-size: 23px;
+    margin-bottom: 2rem;
+}
+.text-3 ul {
+    list-style: none;
+    margin: 0;
+}
+.text-3 ul li {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #1e1e1e;
+}
+.intro {
+    width: 30%;
+}
+.img-3 {
+    height: 410px;
+    width: 370px;
+    border-radius: 5%;
+    margin: 3rem 0;
+}
+
+/*Clients*/
+.roshan {
+    background-color: #ffffff;
+    margin-top: 3rem;
+}
+
+.client {
+    text-align: center;
+    font-size: 30px;
+}
+
+.says {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem auto;
+}
+
+.what {
+    width: 30%;
+    padding: 2rem 1.7rem 2rem 1.7rem;
+    background-color: #dad8d8;
+    border-radius: 10px;
+}
+
+.message p {
+    color: #3a3a3b;
+    padding-bottom: 2rem;
+}
+
+.people {
+    display: flex;
+}
+
+.person {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.pname {
+    padding-left: 1rem;
+    margin: 0px;
+}
+
+.pname h4 {
+    font-size: 25px;
+}
+
+.pname p {
+    color: black;
+    font-size: 18px;
+}
+
+/*Footer CSS*/
+.Footer {
+    background-color: #cacad1;
+}
+
+.FooterContainer {
+    width: 60%;
+    padding: 70px 30px 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact {
+    margin-top: 0px;
+}
+
+.socialicons a i {
+    color: #3a395e;
+    font-size: 30px;
+    margin-right: 17px;
+}
+
+.FooterBottom {
+    background-color: #cacad1;
+    padding: 20px;
+    text-align: center;
+}
+
+.FooterBottom p {
+    color: #3a395e;
+}
+
+.designer {
+    opacity: 1.7;
+    text-transform: ;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+    color: #66649b;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #3a395e;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #3a395e;
+    padding-right: 10px;
+}
+
+.contact-info i {
+    color: #4caf50;
+    margin-right: 10px;
+}
+
+/*RESPONSIVE LINE*/
+@media (max-width:600px) {
+    nav {
+        padding: 10px 20px;
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        padding: 10px 0;
+        gap: 15px;
+        display: none; /* Initially hidden */
+    }
+
+    nav ul.show {
+        display: flex; /* Shown when menu icon is clicked */
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        color: #6c51e7;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-icon i {
+        font-size: 25px;
+    }
+    /*Header end*/
+    /*Name*/
+    .home {
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem 0;
+    }
+    .safal,
+    .image {
+        width: 90%;
+        text-align: center;
+    }
+    .name {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .p-1 {
+        font-size: 18px;
+    }
+    .img-2 {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        max-height: 350px;
+    }
+    .talk-button {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /*about section*/
+    .exp {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ml {
+        width: 90%;
+        margin-left: 0;
+    }
+    .text-1 {
+        font-size: 2.5rem;
+        margin: 2 0rem 1 0rem;
+    }
+    .text-2 {
+        font-size: 18px;
+        margin-bottom: 1.5rem;
+    }
+    .text-3 ul li {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .intro {
+        width: 100%;
+        text-align: center;
+        display: none;
+        margin: 0px;
+    }
+    .img-3 {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        max-height: 350px;
+        margin: 2rem 0;
+    }
+    /*Clients*/
+    .says {
+        flex-direction: column;
+        align-items: center;
+        margin: 1.5rem auto;
+    }
+    .what {
+        width: 95%;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+    .client {
+        font-size: 24px;
+    }
+    .pname h4 {
+        font-size: 20px;
+    }
+    .pname p {
+        font-size: 16px;
+    }
+    .person {
+        height: 50px;
+        width: 50px;
+    }
+    /*Footer*/
+    .FooterContainer {
+        width: 90%;
+        padding: 40px 20px 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .socialicons a i {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    .contact-info h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .contact-info p {
+        font-size: 14px;
+        padding-right: 0px;
+    }
+    .FooterBottom {
+        padding: 15px;
+    }
+    .FooterBottom p {
+        font-size: 14px;
+    }
+    .designer {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+}
+/*Responsive 800px*/
+@media (max-width: 800px) {
+    
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .safal, .image {
+        width: 90%;
+        text-align: center;
+    }
+
+    .home {
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    .text-1 {
+        font-size: 2.5rem;
+    }
+
+    .text-2 {
+        font-size: 18px;
+    }
+    .photo{
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .img-2 {
+        width: 90%;
+        height: auto;
+        margin: 0px;
+        align-items: center;
+    }
+
+    .exp {
+        flex-direction: column;
+    }
+
+    .ml {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .intro {
+        width: 100%;
+        display: none;
+    }
+
+    .says {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .what {
+        width: 95%;
+        padding: 1rem;
+        margin-bottom: 0.9rem;
+    }
+
+    .FooterContainer {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .FooterContainer, .FooterBottom {
+        padding: 20px;
+    }
+}
+@media (max-width: 1000px) {
+    nav {
+        padding: 10px 20px;
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .home {
+        align-items: center;
+        margin: 2rem 0;
+    }
+
+    .safal {
+        width: 90%;
+        text-align: center;
+    }
+
+    .image {
+        width: 80%;
+        margin-top: 2rem;
+    }
+
+    .name {
+        font-size: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .p-1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .talk-button {
+        font-size: 14px;
+        width: 120px;
+        height: 45px;
+        border-radius: 10px;
+    }
+
+    .img-2 {
+        width: 300px;
+        height: 350px;
+    }
+
+    .ml {
+        width: 60%;
+        margin: 2rem auto;
+        margin-left: 0;
+    }
+
+    .text-1 {
+        font-size: 3rem;
+        margin-top: 1rem;
+    }
+
+    .text-2 {
+        font-size: 20px;
+    }
+
+    .intro {
+        width: 40%;
+        text-align: center;
+    }
+
+    .img-3 {
+        height: 300px;
+        width: 270px;
+    }
+
+    .says {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .what {
+        width: 80%;
+        margin: auto;
+        padding: 2rem 1rem;
+    }
+
+    .client {
+        font-size: 25px;
+    }
+
+    .FooterContainer {
+        width: 80%;
+        flex-direction: column;
+    }
+
+    .socialicons a i {
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .experience {
+        padding: 18px;
+        padding-bottom: 8px;
+    }
+
+    .exp {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .ml {
+        width: 60%;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text-1 {
+        font-size: 3.5rem;
+        margin-top: 1px;
+        margin-bottom: 0.75rem;
+    }
+
+    .text-2 {
+        font-size: 20px;
+        margin-bottom: 1.75rem;
+    }
+
+    .text-3 ul li {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
+    .intro {
+        width: 40%;
+        margin-bottom: 2rem;
+    }
+
+    .img-3 {
+        height: 350px;
+        width: 320px;
+        margin: 2rem 0;
+    }
+}
+
