@@ -509,7 +509,7 @@ nav ul li a:hover {
     }
     .ml {
         margin-left: 0;
-        min-width: 100%;
+        min-width: 96%;
     }
     .ml-1{
         width: 98%;
