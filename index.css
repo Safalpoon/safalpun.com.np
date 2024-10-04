@@ -13,7 +13,8 @@ body {
     background: #ffff;
 }
 header{
-    position: sticky;
+    position: fixed;
+    width: 98%;
     top: 0px;
     z-index: 1000;
 }
