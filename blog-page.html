@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="poon 1.png" type="image/x-icon">
+    <link rel="stylesheet" href="blog-page.css">
+    <title>Animated Blog List</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Safal</h1>
+            </div>
+            <ul id="menulist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html#About">About</a></li>
+                <li><a href="blog-page.html">Blog</a></li>
+                <li><a href="#fot">Work With Me</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <section class="blog-page">
+        <div class="blog-container">
+            <div class="blog-post">
+                <img src="html,css.jpg" alt="Blog Post 1">
+                <a href="blog1.html"><h2>Prominency of HTML, CSS and Javascript in Contemporary Web Development</h2></a>
+                <p>In the agile world of digitalisation, web development has become one of the fundamental must-have
+                    skills.</p>
+                <a href="blog1.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-post">
+                <img src="webmap.jpg" alt="Blog Post 2">
+                <a href="blog2.html"><h2>A Simple Roadmap to Becoming a Web Developer in 2024</h2></a>
+                <p>Embarking on the journey to become a web developer can be exciting and challenging.</p>
+                <a href="blog2.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-post">
+                <img src="Eligibility for a Career in Information Technology.jpg" alt="Blog Post 3">
+                <a href="blog3.html"><h2>Eligibility for a Career in Information Technology</h2></a>
+                <p>The Information Technology (IT) sector is experiencing significant growth, presenting numerous
+                    opportunities for individuals with diverse skills and backgrounds.</p>
+                <a href="blog3.html" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+    <!--Footer path-->
+    <footer class="Footer" id="fot">
+        <div class="FooterContainer">
+            <div class="contact">
+                <div class="container">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><i class="fas fa-phone"></i>9847759418</p>
+                        <p><i class="fas fa-envelope"></i>poonsafal13@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Pokhara, Nepal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="socialicons">
+                <a href="https://www.facebook.com/safal.poon.5815"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/intro.html4/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/safal-poon-6b45012a5/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/9847759418"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="FooterBottom">
+            <p>Copyright &copy;2024 Designed by <span class="designer">Safal Poon Magar</span></p>
+        </div>
+    </footer>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Toggle menu for mobile devices
+        function toggleMenu() {
+            const menuList = document.getElementById('menulist');
+            menuList.classList.toggle('show');
+        }
+
+        // Change header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Animate elements on scroll
+        const animateOnScroll = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogPosts = document.querySelectorAll('.blog-post');
+            blogPosts.forEach((post, index) => {
+                setTimeout(() => {
+                    post.style.animation = `fadeInUp 0.6s ease forwards`;
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+
+</html>
