@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="index.css">
-    <title>Safal Pun | Frontend Developer</title>
+        <link rel="icon" href="poon 1.png" type="image/x-icon">
+        <link rel="stylesheet" href="index.css">
+    <title>Safal Poon Magar - Frontend Developer</title>
+    
 </head>
 
 <body>
@@ -18,8 +20,9 @@
                 <h1>Safal</h1>
             </div>
             <ul id="menulist">
-                <li><a href="menu.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#About">About</a></li>
+                <li><a href="blog-page.html">Blog</a></li>
                 <li><a href="#fot">Work With Me</a></li>
             </ul>
             <div class="menu-icon" onclick="toggleMenu()">
@@ -27,8 +30,9 @@
             </div>
         </nav>
     </header>
+   
     <section class="full-body">
-        <section>
+        <section id="home">
             <div class="home">
                 <div class="safal">
                     <h1 class="name"><b>I'm Safal Poon Magar,<br>a <span class="frontend">Frontend Developer</span></b>
@@ -43,7 +47,7 @@
                 </div>
                 <div class="image">
                     <div class="photo">
-                        <img src="poon.jpg" alt="Intro Sirr" class="img-2">
+                        <img src="poon 1.png" alt="Intro Sirr" class="img-2">
                     </div>
                 </div>
             </div>
@@ -79,6 +83,34 @@
                     </div>
                 </div>
             </div>
+        </section>
+        <!-- Blog section Start-->
+        <h1 class="client"></h1>
+        <section id="blog">
+            <h1 class="blog">Blog</h1>
+
+            <div class="blog-container">
+                <div class="blog-post">
+                    <img src="html,css.jpg" alt="Blog Post 1">
+                    <a href="blog1.html"><h2>Prominency of HTML, CSS and Javascript in Contemporary Web Development</h2></a>
+                    <p>In the agile world of digitalisation, web development has become one of the fundamental must-have skills.</p>
+                    <a href="blog1.html" class="read-more">Read More</a>
+                </div>
+                <div class="blog-post">
+                    <img src="webmap.jpg" alt="Blog Post 2">
+                    <a href="blog2.html"><h2>A Simple Roadmap to Becoming a Web Developer in 2024</h2></a>
+                    <p>Embarking on the journey to become a web developer can be exciting and challenging.</p>
+                    <a href="blog2.html" class="read-more">Read More</a>
+                </div>
+                <div class="blog-post">
+                    <img src="Eligibility for a Career in Information Technology.jpg" alt="Blog Post 3">
+                    <a href="blog3.html"><h2>Eligibility for a Career in Information Technology</h2></a>
+                    <p>The Information Technology (IT) sector is experiencing significant growth, presenting numerous
+                        opportunities for individuals with diverse skills and backgrounds.</p>
+                    <a href="blog3.html" class="read-more">Read More</a>
+                </div>
+            </div>
+            <a href="blog-page.html" target="_blank"><button class="blog-button">See More Blog</button></a>
         </section>
         <!--What my clients say-->
         <section class="roshan">
@@ -156,13 +188,7 @@
             <p>Copyright &copy;2024 Designed by <span class="designer">Safal Poon Magar</span></p>
         </div>
     </footer>
-    <script>
-        function toggleMenu() {
-            const menuList = document.getElementById('menulist');
-            menuList.classList.toggle('show');
-        }
-
-    </script>
+    <script  src="java.js"></script>
 </body>
 
 </html>
