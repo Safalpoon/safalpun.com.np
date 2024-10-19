@@ -126,6 +126,7 @@
             animation: fadeInUp 6s ease 1s;
             opacity: 0;
             animation-fill-mode: forwards;
+            border-radius: 8px;
         }
 
         .talk-button:hover {
