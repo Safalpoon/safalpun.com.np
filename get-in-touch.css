@@ -56,7 +56,7 @@
         }
         
         #menulist a:hover {
-            color: var(--primary-color);
+            color: var(--theme-color);
         }
         
         .menu-icon {
