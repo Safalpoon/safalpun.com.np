@@ -261,6 +261,7 @@
 
             #menulist.show {
                 display: flex;
+                margin: 0px;
             }
 
             #menulist li {
