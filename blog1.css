@@ -168,6 +168,11 @@
         .roadmap-step ul{
             margin-left: 1.5rem;
         }
+
+        a{
+            text-decoration: none;
+        }
+
         .Footer {
             background-color: var(--secondary-color);
             color: #fff;
