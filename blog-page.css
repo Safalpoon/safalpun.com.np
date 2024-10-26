@@ -124,6 +124,10 @@
             margin-bottom: 15px;
         }
 
+        .blog-post img:hover{
+            transform: scale(1) rotate(-5deg);
+        }
+
         .blog-post h2 {
             margin: 0 0 5px 0;
             color: #333;
