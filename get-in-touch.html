@@ -35,27 +35,34 @@
         <div class="container">
             <h1>Get in Touch</h1>
             <p class="p1">I'd love to hear from you!</p>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Bibek Doe" name="name" required>
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="form">
+
+                <input type="hidden" name="access_key" value="f3326488-24c6-4ca1-9986-70acbd204a41" />
+                <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+                <input type="hidden" name="from_name" value="My Website" />
+                <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input id="name" name="name" class="form-input" placeholder="Alex Rana" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" name="email" class="form-input" placeholder="company@gmail.com" type="email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-textarea" id="message" name="message"
+                            placeholderr="Your message"></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="you@gmail.com" name="email" required>
+                <button class="form-submit" type="submit">Send Message</button>
+                <div class="success-message">
+                    <p id="result"></p>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" id="submit-btn">Send Message</button>
             </form>
-            <div id="success-message" class="success-message" style="display: none;">
-                Message sent successfully!
-            </div>
-            <div id="error-message" class="error-message" style="display: none;">
-                Failed to send message. Please try again.
-            </div>
+            
         </div>
     </section>
     <footer class="Footer" id="fot">
@@ -85,39 +92,42 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        (function () {
-            emailjs.init("Sy_Ri9Gt0QkObxyVC"); // Replace with your EmailJS user ID
-        })();
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
 
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
 
-            const submitButton = document.getElementById('submit-btn');
-            const successMessage = document.getElementById('success-message');
-            const errorMessage = document.getElementById('error-message');
-
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-
-            const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            emailjs.send('poonsafal13#', 'template_ubyu55c', templateParams)
-                .then(function () {
-                    successMessage.style.display = 'block';
-                    errorMessage.style.display = 'none';
-                    document.getElementById('contact-form').reset();
-                }, function (error) {
-                    console.error('EmailJS error:', error);
-                    successMessage.style.display = 'none';
-                    errorMessage.style.display = 'block';
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully";
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
                 })
-                .finally(function () {
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
                 });
         });
 
