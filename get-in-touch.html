@@ -55,6 +55,7 @@
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-textarea" id="message" name="message"
                             placeholderr="Your message"></textarea>
+                            <div class="h-captcha" data-captcha="true"></div>
                     </div>
                 </div>
                 <button class="form-submit" type="submit">Send Message</button>
@@ -90,7 +91,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
     <script>
         const form = document.getElementById('form');
         const result = document.getElementById('result');
