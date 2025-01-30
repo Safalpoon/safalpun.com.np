@@ -32,37 +32,39 @@
     </header>
 
     <section class="get-in-touch">
-        <div class="container">
+            <div class="container">
             <h1>Get in Touch</h1>
             <p class="p1">I'd love to hear from you!</p>
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="form">
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
                 <input type="hidden" name="access_key" value="f3326488-24c6-4ca1-9986-70acbd204a41" />
                 <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
                 <input type="hidden" name="from_name" value="My Website" />
                 <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
-
+            
                 <div class="form-group-container">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input id="name" name="name" class="form-input" placeholder="Alex Rana" type="text" />
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input id="email" name="email" class="form-input" placeholder="company@gmail.com" type="email" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-textarea" id="message" name="message"
-                            placeholder="Your message" > </textarea>
-                    </div>
+                  <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+                  </div>
+                  <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+                  </div>
+                  <div class="h-captcha" data-sitekey="cde65472-66bc-466a-b9f6-506291444b80"></div>
                 </div>
                 <button class="form-submit" type="submit">Send Message</button>
-                <div class="success-message">
-                    <p id="result"></p>
-                </div>
-            </form>
-            
+              </form>
+            <div id="success-message" class="success-message" style="display: none;">
+                Message sent successfully!
+            </div>
+            <div id="error-message" class="error-message" style="display: none;">
+                Failed to send message. Please try again.
+            </div>
         </div>
     </section>
     <footer class="Footer" id="fot">
@@ -83,7 +85,7 @@
                 <a href="https://www.linkedin.com/in/safal-poon-6b45012a5/"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://wa.me/9847759418"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
-        </div>
+        </div>    
         <div class="FooterBottom">
             <p class="copy">Copyright &copy;2024 Designed and Developed by <span class="designer">Safal Poon
                     Magar</span></p>
@@ -91,44 +93,25 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
     <script>
-        const form = document.getElementById('form');
-        const result = document.getElementById('result');
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-            result.innerHTML = "Please wait..."
+            const submitButton = document.getElementById('form-submit');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
 
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-                .then(async (response) => {
-                    let json = await response.json();
-                    if (response.status == 200) {
-                        result.innerHTML = "Form submitted successfully";
-                    } else {
-                        console.log(response);
-                        result.innerHTML = json.message;
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                    result.innerHTML = "Something went wrong!";
-                })
-                .then(function () {
-                    form.reset();
-                    setTimeout(() => {
-                        result.style.display = "none";
-                    }, 3000);
-                });
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+        
         });
 
         // Smooth scrolling for navigation links
