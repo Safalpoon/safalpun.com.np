@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch, contact for work, html, css, javascript, frontend developer in Pokhara,  Safal Pun , Frontend Developer">
+    <meta name="keywords" content="Safal Pun, Frontend deeloper, Developer, Pokhara, Nepal, Contact">
+    <meta name="author" content="Safal Pun">
+    <link rel="stylesheet" href="css/get-in-touch.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <title>Get in Touch</title>
+
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J9BZGWB6V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5J9BZGWB6V');
+</script>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <b>
+                        <p>Safal</p>
+                    </b>
+                </a>
+            </div>
+            <ul id="menulist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#About">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="get-in-touch.html">Work With Me</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="get-in-touch">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p class="p1">I'd love to hear from you!</p>
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="form">
+
+                <input type="hidden" name="access_key" value="f3326488-24c6-4ca1-9986-70acbd204a41" />
+                <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+                <input type="hidden" name="from_name" value="My Website" />
+                <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input id="name" name="name" class="form-input" placeholder="Alex Rana" type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" name="email" class="form-input" placeholder="company@gmail.com" type="email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-textarea" id="message" name="message"
+                            placeholder="Your message"></textarea>
+                            <div class="h-captcha" data-captcha="true"></div>
+                    </div>
+                </div>
+                <button class="form-submit" type="submit">Send Message</button>
+                <div class="resulting">
+                    <p id="result"></p>
+                </div>
+            </form>
+
+        </div>
+    </section>
+    <footer class="Footer" id="fot">
+        <div class="FooterContainer">
+            <div class="contact">
+                <div class="containers">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><i class="fas fa-phone"></i>+977-9847759418</p>
+                        <p><i class="fas fa-envelope"></i>poonsafal13@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Pokhara, Nepal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="socialicons">
+                <a href="https://www.facebook.com/safal.poon.5815"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/intro.html4/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/safal-poon-6b45012a5/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/9847759418"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="FooterBottom">
+            <p class="copy">Copyright &copy;<span id="copyright-year"></span> Designed and Developed by <span class="designer">Safal Pun
+                    Magar</span></p>
+        </div>
+    </footer>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script>document.getElementById("copyright-year").textContent = new Date().getFullYear();</script>
+    <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
+            result.style.color = "blue";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully";
+                        result.style.color = "green";
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                    result.style.color = "red";
+                })
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Toggle menu for mobile devices
+        function toggleMenu() {
+            const menuList = document.getElementById('menulist');
+            menuList.classList.toggle('show');
+        }
+
+        // Change header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Animate elements on scroll
+        const animateOnScroll = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+    </script>
+</body>
+
+</html>
